@@ -16,10 +16,11 @@
 # end
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    if Rails.env.production?
-      origins "example.com"
-    else
+    # 開発環境の場合は、全てのオリジンからのリクエストを許可する
+    if Rails.env.development?
       origins '*'
+    else
+      origins "example.com"
     end
 
     resource '*',
