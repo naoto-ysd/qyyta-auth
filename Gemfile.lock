@@ -66,6 +66,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    addressable (2.8.6)
+      public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.20)
     bootsnap (1.17.1)
       msgpack (~> 1.2)
@@ -95,6 +97,15 @@ GEM
     irb (1.11.1)
       rdoc
       reline (>= 0.4.2)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
+    letter_opener_web (2.0.0)
+      actionmailer (>= 5.2)
+      letter_opener (~> 1.7)
+      railties (>= 5.2)
+      rexml
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -133,6 +144,7 @@ GEM
     orm_adapter (0.5.0)
     psych (5.1.2)
       stringio
+    public_suffix (5.0.4)
     puma (5.6.8)
       nio4r (~> 2.0)
     racc (1.7.3)
@@ -177,6 +189,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    rexml (3.2.6)
     sqlite3 (1.7.0-aarch64-linux)
     sqlite3 (1.7.0-arm-linux)
     sqlite3 (1.7.0-arm64-darwin)
@@ -208,6 +221,7 @@ DEPENDENCIES
   debug
   devise
   devise_token_auth
+  letter_opener_web (~> 2.0)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.0)
