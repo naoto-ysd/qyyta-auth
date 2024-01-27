@@ -14,3 +14,17 @@
 #       methods: [:get, :post, :put, :patch, :delete, :options, :head]
 #   end
 # end
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    if Rails.env.production?
+      origins "example.com"
+    else
+      origins '*'
+    end
+
+    resource '*',
+      headers: :any,
+      expose: ["access-token", "expiry", "token-type", "uid", "client"],
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+end
